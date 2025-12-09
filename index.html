@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Icó Farma - Cuidando da saúde de sua família</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Icó Farma - farmácia em Icó, Ceará. Atendimento humanizado, medicamentos e serviços farmacêuticos essenciais."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1d4ed8, #ef4444);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+      color: #0f172a;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 980px;
+      background: #f9fafb;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.45);
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    .header {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      background: #0b3b91;
+      color: #f9fafb;
+    }
+
+    .logo img {
+      height: 56px;
+      display: block;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text strong {
+      font-size: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text span {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    /* HERO */
+    .content {
+      padding: 24px 20px 20px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .hero-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: #4b5563;
+      margin-bottom: 14px;
+    }
+
+    .hero-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #1d4ed8;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn-whats {
+      background-color: #22c55e;
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 18px rgba(34, 197, 94, 0.3);
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+
+    .btn-whats:hover {
+      background-color: #16a34a;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(22, 163, 74, 0.35);
+    }
+
+    .btn-ghost {
+      font-size: 14px;
+      background: transparent;
+      border-radius: 999px;
+      padding: 8px 14px;
+      border: 1px solid #1d4ed8;
+      color: #1d4ed8;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-ghost:hover {
+      background: #e0f2fe;
+    }
+
+    .hero-info {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    /* LADO DIREITO - IMAGEM IA */
+    .hero-media {
+      background: radial-gradient(circle at top, #ffffff, #e5e7eb);
+      border-radius: 18px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-photo {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid #e5e7eb;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-features {
+      display: flex;
+      gap: 8px;
+      font-size: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-features span {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 4px 8px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* SEÇÃO MAPA / CONTATO */
+    .section {
+      padding: 0 20px 20px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 14px;
+    }
+
+    .map-contact {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .map-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid #e5e7eb;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 230px;
+      border: 0;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #fee2e2, #fffbeb);
+      border-radius: 16px;
+      padding: 14px;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    footer {
+      padding: 14px;
+      background: #111827;
+      color: #e5e7eb;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+      .map-contact {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- TOPO COM NOVA LOGO -->
+    <header class="header">
+      <div class="logo">
+        <!-- nova logo -->
+        <img src="imagens/logo-ico-farma.png" alt="Icó Farma" />
+      </div>
+      <div class="brand-text">
+        <strong>Icó Farma</strong>
+        <span>Cuidando da saúde de sua família</span>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="content">
+      <section>
+        <h1 class="hero-title">Atendimento humanizado como você e sua família merecem.</h1>
+
+        <p class="hero-subtitle">
+          Na Icó Farma você encontra medicamentos, perfumaria e serviços farmacêuticos,
+          sempre com orientação profissional e acolhimento.
+        </p>
+
+        <div class="hero-highlight">
+          <div class="pill">💊 Medicamentos e perfumaria</div>
+          <div class="pill">🫶 Atendimento humanizado</div>
+        </div>
+
+        <div class="cta-row">
+          <a href="https://wa.me/5588988851284" target="_blank" rel="noopener">
+            <button class="btn-whats">💬 Falar no WhatsApp</button>
+          </a>
+          <a href="#mapa">
+            <button class="btn-ghost">📍 Ver localização</button>
+          </a>
+        </div>
+
+        <p class="hero-info">
+          ⏰ Segunda a sábado, 7h às 20h<br />
+          ☎️ Telefone: (88) 98885-1284<br />
+          📍 R. Piquet Carneiro, 85 - 99986, 6584 - Centro, Icó - CE
+        </p>
+      </section>
+
+      <!-- LADO DIREITO: FARMACÊUTICA EM IA -->
+      <aside class="hero-media">
+        <div class="hero-photo">
+          <img src="imagens/farmaceutica-ico-farma.jpg" alt="Farmacêutica Icó Farma" />
+        </div>
+        <div class="hero-features">
+          <span>👩‍⚕️ Orientação farmacêutica</span>
+          <span>🩺 Aferição de pressão</span>
+          <span>🩸 Teste de glicemia</span>
+          <span>💉 Aplicação de injetáveis</span>
+        </div>
+      </aside>
+    </div>
+
+    <!-- MAPA / CONTATO -->
+    <section class="section" id="mapa">
+      <h2 class="section-title">Como chegar</h2>
+      <p class="section-subtitle">
+        Veja nossa localização no mapa e fale com a Icó Farma pelo WhatsApp ou telefone.
+      </p>
+
+      <div class="map-contact">
+        <div class="map-wrapper">
+          <!-- mapa do Google -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.4521867647995!2d-38.868578482556124!3d-6.406319399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a36926db7ae1af%3A0xf9a48c706fc47db!2sFarm%C3%A1cia%20Ic%C3%B3%20Farma%3A%20Fazemos%20Delivery!5e0!3m2!1spt-BR!2sbr!4v1765239468018!5m2!1spt-BR!2sbr"
+            width="400"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-row">
+            <span>📍</span>
+            <div>
+              <div class="contact-label">Endereço</div>
+              <p>R. Piquet Carneiro, 85 - 99986, 6584 - Centro, Icó - CE</p>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <span>💬</span>
+            <div>
+              <div class="contact-label">WhatsApp</div>
+              <p>Fale diretamente com a equipe da Icó Farma.</p>
+              <a href="https://wa.me/5588988851284" target="_blank" rel="noopener">
+                <button class="btn-whats" style="margin-top: 6px; width: 100%;">
+                  💬 Chamar no WhatsApp
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <span>☎️</span>
+            <div>
+              <div class="contact-label">Telefone</div>
+              <p>(88) 98885-1284</p>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <span>⏰</span>
+            <div>
+              <div class="contact-label">Horário</div>
+              <p>Segunda a sábado: 7h às 20h</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="ano"></span> Icó Farma — Cuidando da saúde de sua família
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
